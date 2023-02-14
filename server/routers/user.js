@@ -11,7 +11,7 @@ export default function (io) {
     router.post("/createUser", home(io).createUser);
     router.post("/login", home(io).login);
     router.post("/updateName", home(io).updatename);
-    router.get(
+    router.post(
         "/getInfo",
         passport.authenticate("jwt", { session: false }),
         home(io).getInfo
