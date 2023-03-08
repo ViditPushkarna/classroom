@@ -12,6 +12,12 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const handleEnterPress = (e) => {
+        if (e.key === 'Enter') {
+            handleSubmit();
+        }
+    }
+
     const handleSubmit = () => {
         dispatch(login(password, email, navigate));
     }
@@ -24,7 +30,8 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)} />
             <input type={"password"} value={password}
                 placeholder={"Password"}
-                onChange={(e) => setPassword(e.target.value)} />
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={handleEnterPress} />
             <div className={styles.submit} onClick={handleSubmit} >Submit</div>
         </div>
     )

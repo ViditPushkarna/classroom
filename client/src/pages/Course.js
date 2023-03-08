@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { initUser } from '../redux/actions/userActions';
 import config from '../config.json'
 import axios from 'axios';
-import Courses from '../components/home/Courses';
-import AddCourse from '../components/home/AddCourse';
-import Navbar from '../components/home/Navbar';
+import Content from '../components/course/Content'
+import Navbar from '../components/course/Navbar';
 import styles from '../styles/home/home.module.css'
-import { getCourses } from '../redux/actions/homeActions';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -40,7 +38,6 @@ export default function Home() {
                 console.log("getInfo useEffect response:", res);
 
                 dispatch(initUser(res.data.user, token));
-                dispatch(getCourses());
             })
             .catch((err) => {
                 console.log(err);
@@ -50,16 +47,11 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.leftHalf}>
-                <div className={styles.navbar}>
-                    <Navbar />
-                </div>
-                <div className={styles.addCourse} >
-                    <AddCourse />
-                </div>
+            <div className={styles.navbar}>
+                <Navbar />
             </div>
-            <div className={styles.rightHalf}>
-                <Courses />
+            <div className={styles.content}>
+                <Content />
             </div>
         </div>
 
