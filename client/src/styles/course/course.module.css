@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+}
+.navbar {
+  height: 7vh;
+  width: 100%;
+  border-style: dashed;
+}
+.content {
+  height: 96vh;
+  width: 100%;
+  border-style: dashed;
+}

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+}
+.leftHalf {
+  height: 96vh;
+  width: 70vw;
+  border-style: dashed;
+}
+.rightHalf {
+  height: 96vh;
+  width: 30vw;
+  border-style: dashed;
+}
+.navbar {
+  height: 7vh;
+  width: 100%;
+  border-style: dashed;
+}
+.addCourse {
+  height: 89vh;
+  width: 100%;
+  border-style: dashed;
+}
